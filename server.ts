@@ -1,8 +1,8 @@
-import { Application } from "./depts.ts";
+import { Application, config } from "./depts.ts";
 import { userRouter } from "./routes/user.routes.ts";
 
 const app = new Application(); //creamos la app del servidor
-const PORT = 8080;
+const {PORT} = config();
 
 //inicializar la app creando una ruta
 // app.use((ctx)=>{
@@ -10,5 +10,5 @@ const PORT = 8080;
 // });
 app.use(userRouter.routes());
 
-app.listen({port:PORT});
+app.listen({port:Number(PORT)});
 console.log(`Server listening on port ${PORT}`);

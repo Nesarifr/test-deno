@@ -1,5 +1,12 @@
+import { ObjectId } from "../../depts.ts";
+
 export interface User{
-    id:string;
-    name:string;
-    age:number;
+    _id: ObjectId;
+    name: string;
+    age: number;
+}
+
+export interface UserInput{
+    name: string;
+    age: number;
 }
